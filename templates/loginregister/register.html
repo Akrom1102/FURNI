@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'logincss/css/style.css' %}" />
+    </head>
+    <body>
+        <div class="container clearfix">
+            <div class="form registration">
+                <a class="logo" href="">
+                    <img src="{% static 'logincss/img/logo.png' %}" alt="Logo" />
+                </a>
+                <form method="POST">
+                    {% csrf_token %}
+                    <p>
+                        <label for="first_name">First name<span>*</span></label>
+                        <input type="text" id="first_name" name="first_name">
+                    </p>
+                    <p>
+                        <label for="last_name">Last name<span>*</span></label>
+                        <input type="text" id="last_name" name="last_name">
+                    </p>
+                    <p>
+                        <label for="username">UserName<span>*</span></label>
+                        <input type="text" id="username" name="username">
+                    </p>
+                    <p>
+                        <label for="email">Email address<span>*</span></label>
+                        <input type="email" id="email" name="email">
+                    </p>
+                    <p>
+                        <label for="password">Password<span>*</span></label>
+                        <input type="password" id="password" name="password">
+                    </p>
+                    <p>
+                        <label for="replay_password">Again password<span>*</span></label>
+                        <input type="password" id="replay_password" name="replay_password">
+                    </p>
+                    <p>
+                        <label>
+                            <a href="{% url 'login' %}">Have an account</a>
+                        </label>
+                        <input type="submit" value="Signup" />
+                    </p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

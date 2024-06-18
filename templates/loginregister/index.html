@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Free HTML Login Templates</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'logincss/css/style.css' %}" />
+    </head>
+    <body>
+        <div class="container clearfix">
+            <div class="form login">
+                <a class="logo" href="">
+                    <h1>Furni</h1>
+                </a>
+                <form method="POST">
+                    {% csrf_token %}
+                    <p> 
+                        {{form}}
+                    </p>
+                    <p>
+                        <label>
+                            <a href="">Forgot password?</a>
+                            <a href="{% url 'register' %}">Create an account</a>
+                        </label>
+                        <input type="submit" value="Login" />
+                    </p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+
+<div class="container">
+    <h1 class="mt-4">Update Product</h1>
+    <form method="post" enctype="multipart/form-data" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_name">Name</label>
+            <input type="text" class="form-control" id="id_name" name="name" value="{{ form.name.value }}">
+        </div>
+        <div class="form-group mt-3">
+            <label for="id_price">Price</label>
+            <input type="number" class="form-control" id="id_price" name="price" value="{{ form.price.value }}">
+        </div>
+        <div class="form-group mt-3">
+            <label for="id_image">Image</label>
+            <input type="file" class="form-control-file" id="id_image" name="image">
+        </div>
+        <button type="submit" class="btn btn-success mt-4 ml-5">Update</button>
+        <a href="{% url 'shop' %}" class="btn btn-danger mt-4 ml-5">Cancel</a>
+    </form>
+</div>
